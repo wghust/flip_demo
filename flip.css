@@ -1,0 +1,155 @@
+.flip {
+	position: relative;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	width: 400px;
+	height: 200px;
+	margin: 10px;
+	/* float: left;
+	*/
+	border: 1px solid transparent;
+	background-color: white;
+	overflow: hidden;
+	transition: box-shadow 0.5s ease 0;
+	-moz-transition: box-shadow  0.5s ease 0;
+	-webkit-transition: box-shadow  0.5s ease 0;
+	-o-transition: box-shadow  0.5s ease 0;
+}
+.flip:hover {
+	box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.3);
+}
+.flip .front {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 400px;
+	height: 200px;
+	display: block;
+	background-color: white;
+	-webkit-transform: rotateY(0deg);
+	-ms-transform: rotateY(0deg);
+	-moz-transform: rotateY(0deg);
+	transform: rotateY(0deg);
+}
+.flip .back {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 400px;
+	/*height: 500px;*/
+	background-color: white;
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg); 
+	transform: rotateY(180deg);
+	display: none;
+}
+.flip.flipToBack {
+	-webkit-transform: perspective(1280px) rotateY(-180deg);
+	-ms-transform: perspective(1280px) rotateY(-180deg);
+	-moz-transform: perspective(1280px) rotateY(-180deg);
+	transform: perspective(1280px) rotateY(-180deg);
+
+	-webkit-animation-name: flipToBack;
+	-webkit-animation-duration: 500ms;
+	-webkit-animation-timing-function: ease-in-out;
+	-webkit-animation-delay: 0;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-direction: normal;
+	-webkit-animation-fill-mode: none;
+	-webkit-animation-play-state: running;
+
+	-moz-animation-name: flipToBack;
+	-moz-animation-duration: 500ms;
+	-moz-animation-timing-function: ease-in-out;
+	-moz-animation-delay: 0;
+	-moz-animation-iteration-count: 1;
+	-moz-animation-direction: normal;
+	-moz-animation-fill-mode: none;
+	-moz-animation-play-state: running;
+
+	animation-name: flipToBack;
+	animation-duration: 500ms;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-fill-mode: none;
+	animation-play-state: running;
+}
+.flip.flipToFront {
+	-webkit-animation-name: flipToFront;
+	-webkit-animation-duration: 500ms;
+	-webkit-animation-timing-function: ease-in-out;
+	-webkit-animation-delay: 0;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-direction: normal;
+	-webkit-animation-fill-mode: none;
+	-webkit-animation-play-state: running;
+	-moz-animation-name: flipToFront;
+	-moz-animation-duration: 500ms;
+	-moz-animation-timing-function: ease-in-out;
+	-moz-animation-delay: 0;
+	-moz-animation-iteration-count: 1;
+	-moz-animation-direction: normal;
+	-moz-animation-fill-mode: none;
+	-moz-animation-play-state: running;
+	animation-name: flipToFront;
+	animation-duration: 500ms;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-fill-mode: none;
+	animation-play-state: running;
+}
+
+@-webkit-keyframes flipToBack {
+	from {
+		-webkit-transform: perspective(1280px) rotateY(0);
+	}
+	to {
+		-webkit-transform: perspective(1280px) rotateY(-180deg);
+	}
+}
+@-moz-keyframes flipToBack {
+	from {
+		-moz-transform: perspective(1280px) rotateY(0);
+	}
+	to {
+		-moz-transform: perspective(1280px) rotateY(-180deg);
+	}
+}
+@keyframes flipToBack {
+	from {
+		transform: perspective(1280px) rotateY(0);
+	}
+	to {
+		transform: perspective(1280px) rotateY(-180deg);
+	}
+}
+@-webkit-keyframes flipToFront {
+	from {
+		-webkit-transform: perspective(1280px) rotateY(-180deg);
+	}
+	to {
+		-webkit-transform: perspective(1280px) rotateY(0);
+	}
+}
+@-moz-keyframes flipToFront {
+	from {
+		-moz-transform: perspective(1280px) rotateY(-180deg);
+	}
+	to {
+		-moz-transform: perspective(1280px) rotateY(0);
+	}
+}
+@keyframes flipToFront {
+	from {
+		transform: perspective(1280px) rotateY(-180deg);
+	}
+	to {
+		transform: perspective(1280px) rotateY(0);
+	}
+}
